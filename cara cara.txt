@@ -1,0 +1,9 @@
+1 tmpt penelitian -> sistem yg berjalan
+2 metode penelitian bab 1
+3.4 use case dll, perancangan yg diusulkan keluar masuk (admin)
+4 tabel implementasi
+
+
+1.	Pencatatan pembukuan dari penjualan sparepart dan service sepeda motor masih manual.
+2.	Pengecekan ketersediaan stock masih dilakukan secara manual sehingga pemilik kesulitan untuk menentukan pemesanan sparepart kepada supplier.
+3.	Pemilik kesulitan dalam menghitung insentif jasa mekanik.

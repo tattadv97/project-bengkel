@@ -1,0 +1,42 @@
+rancangan database no,yes,no,yes,yes
+
+-TABEl SPARE PART (CRUD DONE)
+id
+kode sparepart
+nama sparepart
+harga
+qty
+stock
+id supplier
+bobot
+
+-TABEL JASA
+id
+nama jasa
+harga
+insentif
+
+-TABEL USER
+id
+nama
+username
+password
+role
+
+-TABEL MEKANIK (DONE)
+id
+nama
+status 
+
+-TABEL SUPPLIER (CRUD DONE)
+id
+company name
+alamat
+kontak
+
+-TABEL CUStOMER (DONE)
+id
+nama
+plat nomor
+kendaraan
+kontak
