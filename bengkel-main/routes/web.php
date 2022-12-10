@@ -41,5 +41,7 @@ Route::resource('/mechanic', MechanicController::class);
 Route::resource('/customer', CustomerController::class);
 Route::resource('/jasa', JasaController::class);
 
-Route::resource('/transaction', TransactionController::class);
+Route::resource('/transaction', TransactionController::class)->parameters([
+    'transaction' => 'transaction:invoice'
+]);
 Route::resource('/purchase',PurchaseController::class);

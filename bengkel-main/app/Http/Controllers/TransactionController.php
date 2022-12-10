@@ -30,7 +30,7 @@ class TransactionController extends Controller
 
     public function index()
     {
-        return view('transaction.transaction', [
+        return view('transaction.list', [
             'transaction' => Transaction::all(),
             'customer' => Customer::all()
         ]);
@@ -44,7 +44,7 @@ class TransactionController extends Controller
      */
     public function create()
     {
-        return view('transaction.create-transaction');
+        return view('transaction.transaction');
     }
 
     /**
@@ -58,7 +58,6 @@ class TransactionController extends Controller
         $create = Transaction::create([
             'invoice' => $this->invoiceNumber()
         ]);
-
         return redirect()->route('transaction.edit', ['transaction' => $create->invoice]);
     }
 
@@ -86,7 +85,7 @@ class TransactionController extends Controller
         $views['product'] = Product::all();
         $views['trxDetail'] = TransactionDetail::with('product')->where('invoice', $transaction->invoice)->get();
         $views['subtotal'] = TransactionDetail::where('invoice', $transaction->invoice)->sum('subtotal');
-        return view('transaction.create-transaction', $views);
+        return view('transaction.transaction', $views);
     }
 
     /**

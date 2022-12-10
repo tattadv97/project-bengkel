@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Customer;
+use App\Models\Product;
 use App\Models\Sparepart;
 use App\Models\Supplier;
 use Illuminate\Database\Seeder;
@@ -35,34 +37,44 @@ class DatabaseSeeder extends Seeder
             'contact' => '081288399109'
          ]);
 
-        Sparepart::create([
-            'spare_parts_id' => 'SP001',
-            'spare_parts_name' => 'Shockbreaker Yamaha B5D',
-            'base_price' => 'Rp. 500.000',
-            'selling_price' => '1kg',
-            'qty' => '2',
-            'stock' => '10',
+        Product::create([
+            'product_code' => 'SP001',
+            'product_name' => 'Shockbreaker Yamaha B5D',
+            'base_price' => 500000,
+            'selling_price' => 200000,
+            'unit' => 'PCS',
+            'stock' => 10,
+            'category' => 'SPAREPARTS',
             'supplier_id' => 1
         ]);
 
-        Sparepart::create([
-            'spare_parts_id' => 'SP002',
-            'spare_parts_name' => 'Master Rem Kytaco',
-            'base_price' => 'Rp. 900.000',
-            'selling_price' => '900gr',
-            'qty' => '1',
-            'stock' => '20',
+        Product::create([
+            'product_code' => 'SP002',
+            'product_name' => 'Master Rem Kytaco',
+            'base_price' => 900000,
+            'selling_price' => 1000000,
+            'unit' => 'PCS',
+            'stock' => 20,
+            'category' => 'SPAREPARTS',
             'supplier_id' => 2
         ]);
 
-        Sparepart::create([
-            'spare_parts_id' => 'SP003',
-            'spare_parts_name' => 'Spark Plug',
-            'base_price' => 'Rp. 40.000',
-            'selling_price' => '250gr',
-            'qty' => '2',
-            'stock' => '100',
+        Product::create([
+            'product_code' => 'SP003',
+            'product_name' => 'Spark Plug',
+            'base_price' => 40000,
+            'selling_price' => 200000,
+            'unit' => 'PCS',
+            'stock' => 100,
+            'category' => 'SPAREPARTS',
             'supplier_id' => 3
+        ]);
+
+        Customer::create([
+            'nama' => 'UMUM',
+            'plat_nomor' => '-',
+            'jenis_kendaraan' => '-',
+            'kontak' => '-'
         ]);
     }
 }
