@@ -44,4 +44,5 @@ Route::resource('/jasa', JasaController::class);
 Route::resource('/transaction', TransactionController::class)->parameters([
     'transaction' => 'transaction:invoice'
 ]);
+Route::resource('/transactionDetail', TransactionDetailController::class);
 Route::resource('/purchase',PurchaseController::class);

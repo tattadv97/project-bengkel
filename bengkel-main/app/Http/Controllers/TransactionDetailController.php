@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\TransactionDetail;
 use Illuminate\Http\Request;
 
@@ -35,7 +36,36 @@ class TransactionDetailController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // ambil data form dari request
+        $data = $request->validate([
+            'invoice' => 'required',
+            'product' => 'required',
+            'qty' => 'required',
+        ]);
+
+        // ambil informasi product berdasarkan form name product
+        $product = Product::find($data['product']);
+        // kali harga product * quantity = subtotal
+        $data['productId'] = $product->id;
+        $data['price'] = $product->sellingPrice;
+        $data['subtotal'] = $product->sellingPrice * $data['qty'];
+        $data['submodal'] = $product->basePrice * $data['qty'];
+        $data['profit'] = $data['subtotal'] - $data['submodal'];
+        //cek stock produk
+        $stock = $product->stock - $data['qty'];
+        if($stock < 0) {
+            return redirect()->back()->with('message_error', 'stock kurang');
+        }  else {
+
+            $product->update([
+                'stock' => $stock
+            ]);
+            $product->save();
+
+            // save transaction detail
+            TransactionDetail::create($data);
+            return redirect()->back();
+        }
     }
 
     /**
@@ -80,6 +110,17 @@ class TransactionDetailController extends Controller
      */
     public function destroy(TransactionDetail $transactionDetail)
     {
-        //
+        //ambil data product
+        $product = Product::find($transactionDetail['productId']);
+        //perhitungan stock
+        $stock = $product->stock + $transactionDetail['qty'];
+        //Update data stock product
+        $product->update([
+            'stock' => $stock
+        ]);
+        $product->save();
+        //hapus data
+        TransactionDetail::destroy($transactionDetail->id);
+        return redirect()->back();
     }
 }
