@@ -48,7 +48,7 @@ class ProductController extends Controller
             'unit' => 'required',
             'stock' => 'required',
             'category' => 'required',
-            'supplier_id' => 'supplier_id'
+            'supplier_id' => 'required',
         ]);
 
         Product::create($validatedData);

@@ -32,7 +32,7 @@
                     <tbody>
                         @foreach ($product as $item)
                             <tr>
-                                <td>{{ $item -> product_id }}</td>
+                                <td>{{ $item -> product_code }}</td>
                                 <td>{{ $item -> product_name }}</td>
                                 <td>{{ $item -> base_price}}</td>
                                 <td>{{ $item -> selling_price }}</td>
