@@ -15,7 +15,9 @@ class CreateTransactionsTable extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            
+            $table->string('invoice');
+            $table->string('customerId')->nullable();
+            $table->integer('totalPrice')->nullable();
             $table->timestamps();
         });
     }

@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Customer;
+use App\Models\Product;
 use App\Models\Transaction;
+use App\Models\TransactionDetail;
 use Illuminate\Http\Request;
 
 class TransactionController extends Controller
@@ -12,12 +15,27 @@ class TransactionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     private function invoiceNumber()
+    {
+        $latest = Transaction::latest()->first();
+
+        if (! $latest) {
+            return 'TRX0001';
+        }
+
+        $string = preg_replace("/[^0-9\.]/", '', $latest->invoice);
+        return 'TRX' . sprintf('%04d', $string+1);
+    }
+
     public function index()
     {
         return view('transaction.transaction', [
-            'transaction' => Transaction::all()
+            'transaction' => Transaction::all(),
+            'customer' => Customer::all()
         ]);
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -37,7 +55,11 @@ class TransactionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $create = Transaction::create([
+            'invoice' => $this->invoiceNumber()
+        ]);
+
+        return redirect()->route('transaction.edit', ['transaction' => $create->invoice]);
     }
 
     /**
@@ -59,9 +81,12 @@ class TransactionController extends Controller
      */
     public function edit(Transaction $transaction)
     {
-        return view('transaction.edit-transaction', [
-            'transaction' => $transaction
-        ]);
+        $views['trx'] = $transaction;
+        $views['customer'] = customer::all();
+        $views['product'] = Product::all();
+        $views['trxDetail'] = TransactionDetail::with('product')->where('invoice', $transaction->invoice)->get();
+        $views['subtotal'] = TransactionDetail::where('invoice', $transaction->invoice)->sum('subtotal');
+        return view('transaction.create-transaction', $views);
     }
 
     /**
@@ -73,7 +98,14 @@ class TransactionController extends Controller
      */
     public function update(Request $request, Transaction $transaction)
     {
-        //
+        //ambil data request
+        $data = $request->validate([
+            'customerId' => 'required',
+            'totalPrice' => 'required',
+            ]);
+            //menyimpan data ke tabel transaksi
+            Transaction::where('invoice', $transaction->invoice)->update($data);
+            return redirect()->route('transaction.index');
     }
 
     /**
@@ -85,6 +117,6 @@ class TransactionController extends Controller
     public function destroy(Transaction $transaction)
     {
         Transaction::destroy($transaction->id);
-        return redirect('/transaction')->with('success', 'jasa has been deleted!');
+        return redirect()->route('transaction.index');
     }
 }
