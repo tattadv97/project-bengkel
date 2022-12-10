@@ -10,12 +10,37 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Data Transaction</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Transaction Data</h6>
         </div>
         <div class="card-body">
             <a href="/transaction/create" class="btn btn-primary mb-3">Add Transaction</a>
             <div class="table-responsive">
-                
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Transaction Number</th>
+                            <th>Customer</th>
+                            <th>Total Price</th>
+                            <th>Action</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <a href="#" class="btn btn-warning">Detail</a>
+                                    <form action="#" method="POST" class="d-inline">
+                                        @method('delete')
+                                        @csrf
+                                        <button class="btn btn-danger" onclick="return confirm('Are You Sure ?')">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
