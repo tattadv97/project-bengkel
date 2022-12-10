@@ -29,14 +29,16 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($transaction as $item)
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>{{ $item->invoice }}</td>
+                                <td>{{ $item->customer->nama }}</td>
+                                <td>Rp. {{ $item->totalPrice }}</td>
                                 <td>
                                     <a href="#" class="btn btn-success">Detail</a>
                                 </td>
                             </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

@@ -47,9 +47,9 @@ class TransactionDetailController extends Controller
         $product = Product::find($data['product']);
         // kali harga product * quantity = subtotal
         $data['productId'] = $product->id;
-        $data['price'] = $product->sellingPrice;
-        $data['subtotal'] = $product->sellingPrice * $data['qty'];
-        $data['submodal'] = $product->basePrice * $data['qty'];
+        $data['price'] = $product->selling_price;
+        $data['subtotal'] = $product->selling_price * $data['qty'];
+        $data['submodal'] = $product->base_price * $data['qty'];
         $data['profit'] = $data['subtotal'] - $data['submodal'];
         //cek stock produk
         $stock = $product->stock - $data['qty'];

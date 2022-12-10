@@ -1,14 +1,12 @@
 <?php
 
 use App\Http\Controllers\CustomerController;
-use App\Http\Controllers\JasaController;
 use App\Http\Controllers\MechanicController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PurchaseController;
-use App\Http\Controllers\SparepartController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\TransactionController;
-use Facade\FlareClient\View;
+use App\Http\Controllers\TransactionDetailController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,7 +37,6 @@ Route::resource('/supplier', SupplierController::class);
 Route::resource('/product', ProductController::class);
 Route::resource('/mechanic', MechanicController::class);
 Route::resource('/customer', CustomerController::class);
-Route::resource('/jasa', JasaController::class);
 
 Route::resource('/transaction', TransactionController::class)->parameters([
     'transaction' => 'transaction:invoice'
