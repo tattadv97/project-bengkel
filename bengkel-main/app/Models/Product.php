@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Sparepart extends Model
+class Product extends Model
 {
     use HasFactory;
 
@@ -13,5 +13,5 @@ class Sparepart extends Model
 
     public function supplier(){
         return $this->belongsTo(Supplier::class, 'supplier_id');
-    }
+}
 }

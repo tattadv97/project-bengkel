@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Sparepart;
+use App\Models\Product;
 use App\Models\Supplier;
 use Illuminate\Http\Request;
 
-class SparepartController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class SparepartController extends Controller
      */
     public function index()
     {
-        return view('sparepart.sparepart', [
-            'spareparts' => Sparepart::all()
+        return view('product.product', [
+            'product' => Product::all()
         ]);
     }
 
@@ -27,7 +27,7 @@ class SparepartController extends Controller
      */
     public function create()
     {
-        return view('sparepart.create-sparepart', [
+        return view('product.create-product', [
             'supplier' => Supplier::all()
         ]);
     }
@@ -41,28 +41,27 @@ class SparepartController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'spare_parts_id' => 'required',
-            'spare_parts_name' => 'required',
+            'product_code' => 'required',
+            'product_name' => 'required',
             'base_price' => 'required',
             'selling_price' => 'required',
             'unit' => 'required',
             'stock' => 'required',
-            'point' => 'required',
-            'supplier_id' => 'required'
+            'category' => 'required',
+            'supplier_id' => 'supplier_id'
         ]);
 
-        Sparepart::create($validatedData);
-        return redirect('/sparepart')->with('success', 'New Sparepart has been added!');
-
+        Product::create($validatedData);
+        return redirect('/product')->with('success', 'New Product has been added!');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Sparepart  $sparepart
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Sparepart $sparepart)
+    public function show(Product $product)
     {
         //
     }
@@ -70,14 +69,14 @@ class SparepartController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Sparepart  $sparepart
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Sparepart $sparepart)
+    public function edit(Product $product)
     {
-        return view('sparepart.edit-sparepart', [
+        return view('product.edit-product', [
             'supplier' => Supplier::all(),
-            'sparepart' => $sparepart
+            'product' => $product
         ]);
     }
 
@@ -85,37 +84,37 @@ class SparepartController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Sparepart  $sparepart
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Sparepart $sparepart)
+    public function update(Request $request, Product $product)
     {
         $rules = [
-            'spare_parts_id' => 'required',
-            'spare_parts_name' => 'required',
+            'product_code' => 'required',
+            'product_name' => 'required',
             'base_price' => 'required',
             'selling_price' => 'required',
             'unit' => 'required',
             'stock' => 'required',
-            'point' => 'required',
-            'supplier_id' => 'required'
+            'category' => 'required',
+            'supplier_id' => 'supplier_id'
         ];
 
         $validatedData = $request->validate($rules);
 
-        Sparepart::where('id', $sparepart->id)->update($validatedData);
-        return redirect('/sparepart')->with('success', 'Sparepart has been Updated!');
+        Product::where('id', $product->id)->update($validatedData);
+        return redirect('/product')->with('success', 'Product has been Updated!');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Sparepart  $sparepart
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Sparepart $sparepart)
+    public function destroy(Product $product)
     {
-        Sparepart::destroy($sparepart->id);
-        return redirect('/sparepart')->with('success', 'Sparepart has been deleted!');
+        Product::destroy($product->id);
+        return redirect('/product')->with('success', 'Product has been deleted!');
     }
 }

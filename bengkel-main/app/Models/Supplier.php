@@ -11,7 +11,7 @@ class Supplier extends Model
 
     protected $guarded = ['id'];
 
-    public function sparepart(){
-        return $this->hasMany(Sparepart::class);
+    public function product(){
+        return $this->hasMany(Product::class);
     }
 }

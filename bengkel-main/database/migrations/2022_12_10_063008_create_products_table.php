@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSparepartsTable extends Migration
+class CreateProductsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,20 @@ class CreateSparepartsTable extends Migration
      */
     public function up()
     {
-        Schema::create('spareparts', function (Blueprint $table) {
+        Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('spare_parts_id');
-            $table->string('spare_parts_name');
+            $table->string('product_code');
+            $table->string('product_name');
             $table->integer('base_price');
             $table->integer('selling_price');
             $table->string('unit');
             $table->integer('stock');
-            $table->integer('point');
-            $table->foreignId('supplier_id');
+            $table->string('category');
+            $table->foreignId('supplier_id')->nullable();
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.
@@ -34,6 +35,6 @@ class CreateSparepartsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('spareparts');
+        Schema::dropIfExists('products');
     }
 }

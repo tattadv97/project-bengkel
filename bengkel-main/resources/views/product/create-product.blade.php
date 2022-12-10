@@ -4,24 +4,23 @@
     <div class="container-fluid">
 
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">Edit Sparepart</h1>
+        <h1 class="h3 mb-2 text-gray-800">Create Product</h1>
 
         <div class="card shadow mb-4">
             <div class="card-header" py-3>
-                <h6 class="m-0 font-weight-bold text-primary">Edit Sparepart</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Add Product</h6>
             </div>
             <div class="card-body">
-                <form action="/sparepart/{{ $sparepart->id }}" method="POST">
-                    @method('put')
+                <form action="/product" method="POST">
                     @csrf
 
                     {{-- region sparepart number --}}
                     <div class="mb-3">
-                        <label for="spare_parts_id" class="form-label">Sparepart Number</label>
-                        <input type="text" class="@error('spare_parts_id') is-invalid @enderror form-control"
-                            id="spare_parts_id" name="spare_parts_id" value="{{ old('spare_parts_id', $sparepart->spare_parts_id) }}">
+                        <label for="product_code" class="form-label">Product Number</label>
+                        <input type="text" class="@error('product_code') is-invalid @enderror form-control"
+                            id="product_code" name="product_code" value="{{ old('product_code') }}">
 
-                        @error('spare_parts_id')
+                        @error('product_code')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
@@ -30,11 +29,11 @@
 
                     {{-- region nama sparepart --}}
                     <div class="mb-3">
-                        <label for="spare_parts_name" class="form-label">Nama Sparepart</label>
-                        <input type="text" class="@error('spare_parts_name') is-invalid @enderror form-control"
-                            id="spare_parts_name" name="spare_parts_name" value="{{ old('spare_parts_name', $sparepart->spare_parts_name) }}">
+                        <label for="product_name" class="form-label">Nama Product</label>
+                        <input type="text" class="@error('product_name') is-invalid @enderror form-control"
+                            id="product_name" name="product_name" value="{{ old('product_name') }}">
 
-                        @error('spare_parts_name')
+                        @error('product_name')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
@@ -45,7 +44,7 @@
                     <div class="mb-3">
                         <label for="base_price" class="form-label">Base Price</label>
                         <input type="text" class="@error('base_price') is-invalid @enderror form-control"
-                            id="base_price" name="base_price" value="{{ old('base_price', $sparepart->base_price) }}">
+                            id="base_price" name="base_price" value="{{ old('base_price') }}">
 
                         @error('base_price')
                             <div class="invalid-feedback">
@@ -58,7 +57,7 @@
                     <div class="mb-3">
                         <label for="selling_price" class="form-label">Selling Price</label>
                         <input type="text" class="@error('selling_price') is-invalid @enderror form-control"
-                            id="selling_price" name="selling_price" value="{{ old('selling_price', $sparepart->selling_price) }}">
+                            id="selling_price" name="selling_price" value="{{ old('selling_price') }}">
 
                         @error('selling_price')
                             <div class="invalid-feedback">
@@ -67,11 +66,11 @@
                         @enderror
                     </div>
 
-                    {{-- region QTY --}}
+                    {{-- region unit --}}
                     <div class="mb-3">
                         <label for="unit" class="form-label">Unit</label>
                         <input type="text" class="@error('unit') is-invalid @enderror form-control"
-                            id="unit" name="unit" value="{{ old('unit', $sparepart->unit) }}">
+                            id="unit" name="unit" value="{{ old('unit') }}">
 
                         @error('unit')
                             <div class="invalid-feedback">
@@ -84,7 +83,7 @@
                     <div class="mb-3">
                         <label for="stock" class="form-label">Stock</label>
                         <input type="text" class="@error('stock') is-invalid @enderror form-control"
-                            id="stock" name="stock" value="{{ old('stock', $sparepart->stock) }}">
+                            id="stock" name="stock" value="{{ old('stock') }}">
 
                         @error('stock')
                             <div class="invalid-feedback">
@@ -93,13 +92,13 @@
                         @enderror
                     </div>
 
-                    {{-- region point --}}
+                    {{-- region category --}}
                     <div class="mb-3">
-                        <label for="point" class="form-label">Point</label>
-                        <input type="text" class="@error('point') is-invalid @enderror form-control"
-                            id="point" name="point" value="{{ old('point', $sparepart->point) }}">
+                        <label for="category" class="form-label">Category</label>
+                        <input type="text" class="@error('category') is-invalid @enderror form-control"
+                            id="category" name="category" value="{{ old('category') }}">
 
-                        @error('point')
+                        @error('category')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
@@ -109,9 +108,9 @@
                     {{-- region supplier --}}
                     <div class="mb-3">
                         <label for="supplier_id" class="form-label">Supplier</label>
-                        <select name="supplier_id" class="form-control form-select" id="supplier_id">
+                        <select value="" name="supplier_id" class="form-control form-select" id="supplier_id">
                             @foreach ($supplier as $item)
-                                @if (old('supplier_id', $sparepart->supplier_id) == $item -> id)
+                                @if (old('supplier_id') == $item -> id)
                                     <option value="{{ $item->id }}" selected>{{ $item->company_name }}</option>
                                 @else
                                     <option value="{{ $item->id }}">{{ $item->company_name }}</option>
@@ -120,7 +119,7 @@
                         </select>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Edit Sparepart</button>
+                    <button type="submit" class="btn btn-primary">Add Product</button>
                     <a href="/sparepart" class="btn btn-danger ">Cancel</a>
                 </form>
             </div>
