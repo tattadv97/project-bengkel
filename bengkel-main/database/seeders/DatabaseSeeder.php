@@ -76,5 +76,12 @@ class DatabaseSeeder extends Seeder
             'jenis_kendaraan' => '-',
             'kontak' => '-'
         ]);
+
+        Customer::create([
+            'nama' => 'Ujkkk',
+            'plat_nomor' => 'f15662oo',
+            'jenis_kendaraan' => 'hohnda',
+            'kontak' => '02883873'
+        ]);
     }
 }
