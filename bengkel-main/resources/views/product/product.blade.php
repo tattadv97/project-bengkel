@@ -41,11 +41,11 @@
                                 <td>{{ $item -> category }}</td>
                                 <td>{{ $item -> supplier -> company_name }}</td>
                                 <td>
-                                    <a href="/product/{{ $item->id }}/edit" class="btn btn-warning">Edit</a>
+                                    <a href="/product/{{ $item->id }}/edit" class="btn btn-warning"><i class="fa fa-edit"></i></a>
                                     <form action="/product/{{ $item->id }}" method="POST" class="d-inline">
                                         @method('delete')
                                         @csrf
-                                        <button class="btn btn-danger" onclick="return confirm('Are You Sure ?')">Delete</button>
+                                        <button class="btn btn-danger" onclick="return confirm('Are You Sure ?')"><i class="fa fa-trash"></i></button>
                                     </form>
                                 </td>
                             </tr>

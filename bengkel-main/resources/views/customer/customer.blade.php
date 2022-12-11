@@ -34,11 +34,11 @@
                                 <td>{{ $item -> jenis_kendaraan }}</td>
                                 <td>{{ $item -> kontak }}</td>
                                 <td>
-                                    <a href="/customer/{{ $item->id }}/edit" class="btn btn-warning">Edit</a>
+                                    <a href="/customer/{{ $item->id }}/edit" class="btn btn-warning"><i class="fa fa-edit"></a>
                                     <form action="/customer/{{ $item->id }}" method="POST" class="d-inline">
                                         @method('delete')
                                         @csrf
-                                        <button class="btn btn-danger" onclick="return confirm('Are You Sure ?')">Delete</button>
+                                        <button class="btn btn-danger" onclick="return confirm('Are You Sure ?')"><i class="fa fa-trash"></button>
                                     </form>
                                 </td>
                             </tr>

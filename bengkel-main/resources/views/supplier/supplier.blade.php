@@ -32,11 +32,11 @@
                                 <td>{{ $item -> address }}</td>
                                 <td>{{ $item -> contact }}</td>
                                 <td>
-                                    <a href="/supplier/{{ $item->id }}/edit" class="btn btn-warning">Edit</a>
+                                    <a href="/supplier/{{ $item->id }}/edit" class="btn btn-warning"><i class="fa fa-edit"></a>
                                     <form action="/supplier/{{ $item->id }}" method="POST" class="d-inline">
                                         @method('delete')
                                         @csrf
-                                        <button class="btn btn-danger" onclick="return confirm('Are You Sure ?')">Delete</button>
+                                        <button class="btn btn-danger" onclick="return confirm('Are You Sure ?')"><i class="fa fa-trash"></button>
                                     </form>
                                 </td>
                             </tr>
