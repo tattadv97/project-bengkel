@@ -35,7 +35,7 @@
                                 <td>{{ $item->customer->nama }}</td>
                                 <td>Rp. {{ $item->totalPrice }}</td>
                                 <td>
-                                    <a href="#" class="btn btn-success">Detail</a>
+                                    <a href="/cetakTransaction" class="btn btn-success">Detail</a>
                                 </td>
                             </tr>
                         @endforeach

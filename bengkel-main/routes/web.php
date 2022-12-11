@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CetakTransactionController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\MechanicController;
 use App\Http\Controllers\ProductController;
@@ -33,6 +34,7 @@ Route::get('/form', function(){
     return view('template.form');
 });
 
+//Export
 
 Route::resource('/supplier', SupplierController::class);
 Route::resource('/product', ProductController::class);
@@ -42,5 +44,10 @@ Route::resource('/customer', CustomerController::class);
 Route::resource('/transaction', TransactionController::class)->parameters([
     'transaction' => 'transaction:invoice'
 ]);
+
+Route::get('/cetak', [TransactionController::class, 'cetak']);
+
 Route::resource('/transactionDetail', TransactionDetailController::class);
+Route::resource('/cetakTransaction', CetakTransactionController::class);
+
 Route::resource('/purchase',PurchaseController::class);
