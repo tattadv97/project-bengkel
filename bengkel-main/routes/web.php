@@ -33,6 +33,7 @@ Route::get('/form', function(){
     return view('template.form');
 });
 
+
 Route::resource('/supplier', SupplierController::class);
 Route::resource('/product', ProductController::class);
 Route::resource('/mechanic', MechanicController::class);

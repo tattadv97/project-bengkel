@@ -123,4 +123,5 @@ class TransactionDetailController extends Controller
         TransactionDetail::destroy($transactionDetail->id);
         return redirect()->back();
     }
+
 }
