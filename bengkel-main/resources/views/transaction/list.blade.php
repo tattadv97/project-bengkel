@@ -35,7 +35,7 @@
                                 <td>{{ $item->customer->nama }}</td>
                                 <td>Rp. {{ $item->totalPrice }}</td>
                                 <td>
-                                    <a href="/cetakTransaction" class="btn btn-success">Detail</a>
+                                    <a href="{{ route('transaction.show', ['transaction' => $item->invoice]) }}" class="btn btn-success fa fa-copy" target="_blank"></a>
                                 </td>
                             </tr>
                         @endforeach

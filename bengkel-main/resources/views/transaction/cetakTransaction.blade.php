@@ -73,7 +73,7 @@
                                 </tr>
     						</thead>
     						<tbody>
-    							@foreach ( $transactionDetail as $item)
+    							@foreach ( $trxDetail as $item)
                                 <tr>
     								<td>{{ $item->product->product_name }}</td>
     								<td class="text-center">Rp. {{ $item->product->selling_price }}</td>
