@@ -73,7 +73,11 @@
                                 </tr>
     						</thead>
     						<tbody>
+<<<<<<< HEAD
     							@foreach ( $requestDetail as $item)
+=======
+    							@foreach ( $trxDetail as $item)
+>>>>>>> 39eb186e4dfa2e407ff814ac9845f6886b774221
                                 <tr>
     								<td>{{ $item->product->product_name }}</td>
     								<td class="text-center">Rp. {{ $item->product->selling_price }}</td>
