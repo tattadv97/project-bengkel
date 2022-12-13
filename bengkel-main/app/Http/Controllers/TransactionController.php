@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Customer;
+use App\Models\Mechanic;
 use App\Models\Product;
 use App\Models\Transaction;
 use App\Models\TransactionDetail;
@@ -32,7 +33,8 @@ class TransactionController extends Controller
     {
         return view('transaction.list', [
             'transaction' => Transaction::all(),
-            'customer' => Customer::all()
+            'customer' => Customer::all(),
+            'mechanic' => Mechanic::all()
         ]);
     }
 

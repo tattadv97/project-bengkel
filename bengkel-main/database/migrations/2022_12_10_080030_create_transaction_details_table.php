@@ -21,10 +21,12 @@ class CreateTransactionDetailsTable extends Migration
             $table->integer('price');
             $table->integer('profit');
             $table->integer('subtotal');
+            $table->foreignId('mechanic_id')->nullable();
             $table->timestamps();
         });
     }
 
+    
     /**
      * Reverse the migrations.
      *

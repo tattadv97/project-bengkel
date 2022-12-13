@@ -23,6 +23,7 @@
                         <tr>
                             <th>Transaction Number</th>
                             <th>Customer</th>
+                            <th>Mechanic</th>
                             <th>Total Price</th>
                             <th>Action</th>
                             
@@ -33,6 +34,7 @@
                             <tr>
                                 <td>{{ $item->invoice }}</td>
                                 <td>{{ $item->customer->nama }}</td>
+                                <td>{{ $item->mechanic->nama }}</td>
                                 <td>Rp. {{ $item->totalPrice }}</td>
                                 <td>
                                     <a href="{{ route('transaction.show', ['transaction' => $item->invoice]) }}" class="btn btn-success fa fa-copy" target="_blank"></a>

@@ -10,4 +10,8 @@ class Mechanic extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+
+    public function TransactionDetail(){
+        return $this->hasMany(TransactionDetail::class);
+    }
 }

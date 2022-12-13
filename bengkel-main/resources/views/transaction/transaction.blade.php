@@ -77,6 +77,18 @@
                         </select>
                     </div>
                     <div class="col-sm-3">
+                        <label class="visually-hidden" for="mechanic_id">Mechanic</label>
+                        <select name="mechanic_id" class="form-control form-select" id="mechanic_id" required>
+                            @foreach ($mechanic as $item)
+                                @if (old('mechanic_id') == $item->id)
+                                    <option value="{{ $item->id }}" selected>{{ $item->nama }}</option>
+                                @else
+                                    <option value="{{ $item->id }}">{{ $item->nama }}</option>
+                                @endif
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
                         <label for="totalPrice">Total Price</label>
                         <input type="text" class="form-control" id="totalPrice" name="totalPrice" value="{{ $subtotal }}" readonly>
                     </div>
