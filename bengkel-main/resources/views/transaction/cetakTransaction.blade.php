@@ -33,7 +33,7 @@
     <div class="row">
         <div class="col-xs-12">
     		<div class="invoice-title">
-    			<h2>BENGKEL SABIT</h2><h3 class="pull-right">Invoice -{{ $trx['invoice'] }}</h3>
+    			<h2>BENGKEL SABIT</h2><h3 class="pull-right">Invoice -{{ $request['invoice'] }}</h3>
     		</div>
     		<hr>
 
@@ -41,14 +41,14 @@
     			<div class="col-xs-6">
     				<address>
     					<strong>{{ $customer->nama }}</strong><br>
-    					{{ $customer->address }}<br>
-    					{{ $customer->msisdn }}
+    					{{ $customer->plat_nomor }}<br>
+    					{{ $customer->jenis_kendaraan }}
     				</address>
     			</div>
     			<div class="col-xs-6 text-right">
     				<address>
     					<strong>Order Date:</strong><br>
-    					{{ $trx['created_at'] }}<br><br>
+    					{{ $request['created_at'] }}<br><br>
     				</address>
     			</div>
     		</div>
@@ -73,7 +73,7 @@
                                 </tr>
     						</thead>
     						<tbody>
-    							@foreach ( $transactionDetail as $item)
+    							@foreach ( $requestDetail as $item)
                                 <tr>
     								<td>{{ $item->product->product_name }}</td>
     								<td class="text-center">Rp. {{ $item->product->selling_price }}</td>
@@ -85,7 +85,7 @@
     								<td class="thick-line"></td>
     								<td class="thick-line"></td>
     								<td class="thick-line text-center"><strong>Subtotal</strong></td>
-    								<td class="thick-line text-right">Rp. {{ $trx->totalPrice }}</td>
+    								<td class="thick-line text-right">Rp. {{ $request->totalPrice }}</td>
     							</tr>
     							<tr>
     								<td class="no-line"></td>
@@ -97,7 +97,7 @@
     								<td class="no-line"></td>
     								<td class="no-line"></td>
     								<td class="no-line text-center"><strong>Total</strong></td>
-    								<td class="no-line text-right">Rp. {{ $trx->totalPrice }}</td>
+    								<td class="no-line text-right">Rp. {{ $request->totalPrice }}</td>
     							</tr>
     						</tbody>
     					</table>
