@@ -11,7 +11,7 @@ class Mechanic extends Model
 
     protected $guarded = ['id'];
 
-    public function TransactionDetail(){
-        return $this->hasMany(TransactionDetail::class);
+    public function Transaction(){
+        return $this->hasMany(Transaction::class);
     }
 }

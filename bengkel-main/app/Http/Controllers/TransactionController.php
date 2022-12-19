@@ -107,6 +107,7 @@ class TransactionController extends Controller
         //ambil data request
         $data = $request->validate([
             'customerId' => 'required',
+            'mechanic_id' => 'required',
             'totalPrice' => 'required',
             ]);
             //menyimpan data ke tabel transaksi

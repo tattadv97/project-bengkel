@@ -33,22 +33,22 @@
     <div class="row">
         <div class="col-xs-12">
     		<div class="invoice-title">
-    			<h2>BENGKEL SABIT</h2><h3 class="pull-right">Invoice -{{ $request['invoice'] }}</h3>
+    			<h2>TOKO MUZIJAT</h2><h3 class="pull-right">Invoice -{{ $trx['invoice'] }}</h3>
     		</div>
     		<hr>
 
     		<div class="row">
     			<div class="col-xs-6">
     				<address>
-    					<strong>{{ $customer->nama }}</strong><br>
-    					{{ $customer->plat_nomor }}<br>
-    					{{ $customer->jenis_kendaraan }}
+    					<strong>{{ $customer->customerName }}</strong><br>
+    					{{ $customer->address }}<br>
+    					{{ $customer->msisdn }}
     				</address>
     			</div>
     			<div class="col-xs-6 text-right">
     				<address>
     					<strong>Order Date:</strong><br>
-    					{{ $request['created_at'] }}<br><br>
+    					{{ $trx['created_at'] }}<br><br>
     				</address>
     			</div>
     		</div>
@@ -73,15 +73,11 @@
                                 </tr>
     						</thead>
     						<tbody>
-<<<<<<< HEAD
-    							@foreach ( $requestDetail as $item)
-=======
-    							@foreach ( $trxDetail as $item)
->>>>>>> 39eb186e4dfa2e407ff814ac9845f6886b774221
+    							@foreach ($trxDetail as $item)
                                 <tr>
-    								<td>{{ $item->product->product_name }}</td>
-    								<td class="text-center">Rp. {{ $item->product->selling_price }}</td>
-    								<td class="text-center">{{ $item->category }}</td>
+    								<td>{{ $item->product->productName }}</td>
+    								<td class="text-center">Rp. {{ $item->product->sellingPrice }}</td>
+    								<td class="text-center">{{ $item->qty }}</td>
     								<td class="text-right">Rp. {{ $item->subtotal }}</td>
     							</tr>
                                 @endforeach
@@ -89,7 +85,7 @@
     								<td class="thick-line"></td>
     								<td class="thick-line"></td>
     								<td class="thick-line text-center"><strong>Subtotal</strong></td>
-    								<td class="thick-line text-right">Rp. {{ $request->totalPrice }}</td>
+    								<td class="thick-line text-right">Rp. {{ $trx->totalPrice }}</td>
     							</tr>
     							<tr>
     								<td class="no-line"></td>
@@ -101,7 +97,7 @@
     								<td class="no-line"></td>
     								<td class="no-line"></td>
     								<td class="no-line text-center"><strong>Total</strong></td>
-    								<td class="no-line text-right">Rp. {{ $request->totalPrice }}</td>
+    								<td class="no-line text-right">Rp. {{ $trx->totalPrice }}</td>
     							</tr>
     						</tbody>
     					</table>

@@ -17,6 +17,7 @@ class CreateTransactionsTable extends Migration
             $table->id();
             $table->string('invoice');
             $table->string('customerId')->nullable();
+            $table->foreignId('mechanic_id')->nullable();
             $table->integer('totalPrice')->nullable();
             $table->timestamps();
         });
