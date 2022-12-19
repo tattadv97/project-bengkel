@@ -87,6 +87,7 @@ class TransactionController extends Controller
     public function edit(Transaction $transaction)
     {
         $views['trx'] = $transaction;
+        $views['mechanic'] = Mechanic::all();
         $views['customer'] = Customer::all();
         $views['product'] = Product::all();
         $views['trxDetail'] = TransactionDetail::with('product')->where('invoice', $transaction->invoice)->get();

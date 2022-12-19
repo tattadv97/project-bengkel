@@ -11,7 +11,7 @@ class Customer extends Model
 
     protected $guarded = ['id'];
 
-    public function TransactionDetail()
+    public function Transaction()
     {
         return $this->hasMany(Transaction::class);
     }

@@ -20,9 +20,4 @@ class TransactionDetail extends Model
     {
         return $this->hasMany(Transaction::class, 'invoice');
     }
-
-    public function mechanic()
-    {
-        return $this->belongsTo(Mechanic::class, 'mechanic_id');
-    }
 }
