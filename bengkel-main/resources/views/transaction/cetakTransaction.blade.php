@@ -33,7 +33,7 @@
     <div class="row">
         <div class="col-xs-12">
     		<div class="invoice-title">
-    			<h2>TOKO MUZIJAT</h2><h3 class="pull-right">Invoice -{{ $trx['invoice'] }}</h3>
+    			<h2>BENGKEL SABIT</h2><h3 class="pull-right">Invoice -{{ $trx['invoice'] }}</h3>
     		</div>
     		<hr>
 

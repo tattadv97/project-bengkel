@@ -121,7 +121,7 @@
                                                 @method('DELETE')
                                                 @csrf
                                                 <button class="btn btn-danger"
-                                                    onclick="return confirm('Are You Sure??')" type="submit">Cancle</button>
+                                                    onclick="return confirm('Are You Sure??')" type="submit">Cancel</button>
                                             </form>
                                         </td>
                                     </tr>

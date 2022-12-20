@@ -41,7 +41,7 @@ class MechanicController extends Controller
     {
         $validatedData = $request->validate([
             'nama' => 'required',
-            'status' => 'required',
+            'jabatan' => 'required',
         ]);
 
         Mechanic::create($validatedData);
@@ -83,7 +83,7 @@ class MechanicController extends Controller
     {
         $rules = [
             'nama' => 'required',
-            'status' => 'required',
+            'jabatan' => 'required',
         ];
 
         $validatedData = $request -> validate($rules);

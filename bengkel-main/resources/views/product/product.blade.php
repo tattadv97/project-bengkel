@@ -14,7 +14,18 @@
         </div>
         <div class="card-body">
             <a href="/product/create" class="btn btn-primary mb-3">Add Product</a>
-            <div class="table-responsive">
+            <form action="/" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="row">
+                    <div class="col-sm-3">
+                        <input type="file" name="file" id="file" class="form-control">
+                    </div>
+                    <div class="col-sm-2">
+                        <button class="btn btn-success">Import</button>
+                    </div>
+                </div>
+            </form>
+            <div class="table-responsive mt-3">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>

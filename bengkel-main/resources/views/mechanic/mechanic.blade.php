@@ -19,7 +19,7 @@
                     <thead>
                         <tr>
                             <th>Nama</th>
-                            <th>Status</th>
+                            <th>Jabatan</th>
                             <th>Action</th>
                             
                         </tr>
@@ -28,7 +28,7 @@
                         @foreach ($mechanic as $item)
                             <tr>
                                 <td>{{ $item -> nama }}</td>
-                                <td>{{ $item -> status }}</td>
+                                <td>{{ $item -> jabatan }}</td>
                                 <td>
                                     <a href="/mechanic/{{ $item->id }}/edit" class="btn btn-warning">Edit</a>
                                     <form action="/mechanic/{{ $item->id }}" method="POST" class="d-inline">

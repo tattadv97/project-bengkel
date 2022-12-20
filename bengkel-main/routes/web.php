@@ -9,6 +9,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\TransactionDetailController;
+use App\Imports\ProductImport;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,6 +34,12 @@ Route::get('/', function(){
 
 Route::get('/form', function(){
     return view('template.form');
+});
+
+//Import
+Route::post('/', function(){
+    \Maatwebsite\Excel\Facades\Excel::import(new ProductImport, request()->file('file'));
+    return back();
 });
 
 //Export

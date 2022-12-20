@@ -27,11 +27,11 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="status" class="form-label">Status</label>
-                        <input type="text" class="@error('status') is-invalid @enderror form-control"
-                            id="status" name="status" value="{{ old('status', $mechanic->status) }}">
+                        <label for="jabatan" class="form-label">Jabatan</label>
+                        <input type="text" class="@error('jabatan') is-invalid @enderror form-control"
+                            id="jabatan" name="jabatan" value="{{ old('jabatan', $mechanic->jabatan) }}">
 
-                        @error('status')
+                        @error('jabatan')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>

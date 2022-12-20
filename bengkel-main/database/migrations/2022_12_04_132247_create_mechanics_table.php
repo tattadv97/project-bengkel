@@ -16,7 +16,7 @@ class CreateMechanicsTable extends Migration
         Schema::create('mechanics', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('status');
+            $table->string('jabatan');
             $table->timestamps();
         });
     }
