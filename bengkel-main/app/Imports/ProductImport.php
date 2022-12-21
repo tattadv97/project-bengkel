@@ -3,6 +3,7 @@
 namespace App\Imports;
 
 use App\Models\Product;
+use App\Models\Supplier;
 use Maatwebsite\Excel\Concerns\ToModel;
 
 class ProductImport implements ToModel
@@ -22,7 +23,7 @@ class ProductImport implements ToModel
             'unit' => $row[4],
             'stock' => $row[5],
             'category' => $row[6],
-            'supplier_id' => Product::firstWhere('company_name', $row[7])->id
+            'supplier_id' => Supplier::firstWhere('company_name', $row[7])->id
         ]);
     }
 }
