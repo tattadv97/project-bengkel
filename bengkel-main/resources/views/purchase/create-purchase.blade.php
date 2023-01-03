@@ -52,7 +52,7 @@
                     </div>
 
                     <button type="submit" class="btn btn-primary">Add </button>
-                    <a href="/transaction" class="btn btn-danger ">Cancel</a>
+                    <a href="/purchase" class="btn btn-danger ">Cancel</a>
                 </form>
             </div>
                 <hr>
