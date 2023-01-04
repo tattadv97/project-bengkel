@@ -16,22 +16,22 @@ class PurchaseController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     private function invoiceNumber()
-     {
-         $latest = Purchase::latest()->first();
- 
-         if (! $latest) {
-             return 'PO001';
-         }
- 
-         $string = preg_replace("/[^0-9\.]/", '', $latest->invoice);
-         return 'PO' . sprintf('%04d', $string+1);
-     }
- 
+    private function invoiceNumber()
+    {
+        $latest = Purchase::latest()->first();
+
+        if (!$latest) {
+            return 'PO001';
+        }
+
+        $string = preg_replace("/[^0-9\.]/", '', $latest->invoice);
+        return 'PO' . sprintf('%04d', $string + 1);
+    }
+
 
     public function index()
     {
-        return view('purchase.purchase', [
+        return view('purchase.list', [
             'purchase' => Purchase::all(),
             'suppliers' => Supplier::all()
         ]);
@@ -44,7 +44,7 @@ class PurchaseController extends Controller
      */
     public function create()
     {
-        return view('purchase.create-purchase');
+        return view('purchase.purchase');
     }
 
     /**
@@ -101,10 +101,10 @@ class PurchaseController extends Controller
         $data = $request->validate([
             'supplier_id' => 'required',
             'totalPrice' => 'required',
-            ]);
-            //menyimpan data ke tabel transaksi
-            Purchase::where('invoice', $purchase->invoice)->update($data);
-            return redirect()->route('purchase.index');
+        ]);
+        //menyimpan data ke tabel transaksi
+        Purchase::where('invoice', $purchase->invoice)->update($data);
+        return redirect()->route('purchase.index');
     }
 
     /**
