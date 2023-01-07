@@ -6,6 +6,7 @@ use App\Http\Controllers\MechanicController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ReportTransactionController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\TransactionDetailController;
@@ -59,3 +60,5 @@ Route::resource('/transactionDetail', TransactionDetailController::class);
 Route::resource('/cetakTransaction', CetakTransactionController::class);
 
 Route::resource('/purchase',PurchaseController::class);
+    
+Route::resource('/reportTransaction', ReportTransactionController::class);
