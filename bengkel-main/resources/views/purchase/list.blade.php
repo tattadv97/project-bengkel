@@ -31,7 +31,7 @@
                         @foreach ($purchase as $item)
                             <tr>
                                 <td>{{ $item->invoice }}</td>
-                                <td>{{ $item->Supplier->supplier_id }}</td>
+                                <td>{{ $item->supplier->company_name }}</td>
                                 <td>Rp. {{ $item->totalPrice }}</td>
                                 <td>
                                     <a href="{{ route('purchase.show', ['purchase' => $item->invoice]) }}" class="btn btn-success fa fa-copy" target="_blank"></a>
