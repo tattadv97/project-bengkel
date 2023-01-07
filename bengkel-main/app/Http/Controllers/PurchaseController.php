@@ -21,7 +21,7 @@ class PurchaseController extends Controller
         $latest = Purchase::latest()->first();
 
         if (!$latest) {
-            return 'PO001';
+            return 'PO0001';
         }
 
         $string = preg_replace("/[^0-9\.]/", '', $latest->invoice);

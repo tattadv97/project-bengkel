@@ -73,6 +73,7 @@ class TransactionController extends Controller
     {
         $views['trx'] = $transaction;
         $views['customer'] = customer::find($transaction->customerId);
+        $views['mechanic'] = Mechanic::find($transaction->mechanic_id);
         $views['product'] = product::all();
         $views['trxDetail'] = TransactionDetail::with('product')->where('invoice', $transaction->invoice)->get();
         return view('transaction.cetakTransaction', $views);

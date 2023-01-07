@@ -49,6 +49,10 @@
     				<address>
     					<strong>Order Date:</strong><br>
     					{{ $trx['created_at'] }}<br><br>
+    					<strong>Customer : </strong>
+    					{{ $customer->nama }}<br><br>
+    					<strong>Mechanic : </strong>
+    					{{ $mechanic->nama }}<br><br>
     				</address>
     			</div>
     		</div>
@@ -75,8 +79,8 @@
     						<tbody>
     							@foreach ($trxDetail as $item)
                                 <tr>
-    								<td>{{ $item->product->productName }}</td>
-    								<td class="text-center">Rp. {{ $item->product->sellingPrice }}</td>
+    								<td>{{ $item->product->product_name }}</td>
+    								<td class="text-center">Rp. {{ $item->product->selling_price }}</td>
     								<td class="text-center">{{ $item->qty }}</td>
     								<td class="text-right">Rp. {{ $item->subtotal }}</td>
     							</tr>
