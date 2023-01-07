@@ -1,6 +1,9 @@
 @extends('template.layout')
 
 @section('content')
+<form id="generatePO" action="{{ route('PurchaseDetail.store') }}" method="POST">
+    @csrf()
+</form>
     
 <div class="container-fluid">
 
@@ -13,7 +16,7 @@
             <h6 class="m-0 font-weight-bold text-primary">Purchase Data</h6>
         </div>
         <div class="card-body">
-            <a href="/purchase/create" class="btn btn-primary mb-3">Add Purchase</a>
+            <a href="javascript:;" onclick="document.getElementById('generatePO').submit();" class="btn btn-primary mb-3">Purchase</a>
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
@@ -22,23 +25,19 @@
                             <th>Supplier</th>
                             <th>Total Price</th>
                             <th>Action</th>
-                            
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($purchase as $item)
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>{{ $item->invoice }}</td>
+                                <td>{{ $item->Supplier->supplier_id }}</td>
+                                <td>Rp. {{ $item->totalPrice }}</td>
                                 <td>
-                                    <a href="#" class="btn btn-warning">Detail</a>
-                                    <form action="#" method="POST" class="d-inline">
-                                        @method('delete')
-                                        @csrf
-                                        <button class="btn btn-danger" onclick="return confirm('Are You Sure ?')">Delete</button>
-                                    </form>
+                                    <a href="{{ route('purchase.show', ['purchase' => $item->invoice]) }}" class="btn btn-success fa fa-copy" target="_blank"></a>
                                 </td>
                             </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

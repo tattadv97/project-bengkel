@@ -5,6 +5,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\MechanicController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PurchaseController;
+use App\Http\Controllers\PurchaseDetailController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\TransactionController;
@@ -58,4 +59,7 @@ Route::get('/cetak', [TransactionController::class, 'cetak']);
 Route::resource('/transactionDetail', TransactionDetailController::class);
 Route::resource('/cetakTransaction', CetakTransactionController::class);
 
-Route::resource('/purchase',PurchaseController::class);
+Route::resource('/purchase',PurchaseController::class)->parameters([
+    'purchase' => 'purchase:invoice'
+]);
+Route::resource('/PurchaseDetail', PurchaseDetailController::class);

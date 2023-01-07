@@ -58,6 +58,7 @@ class PurchaseController extends Controller
         $create = Purchase::create([
             'invoice' => $this->invoiceNumber()
         ]);
+        dd($create);
         return redirect()->route('purchase.edit', ['purchase' => $create->invoice]);
     }
 
@@ -80,6 +81,7 @@ class PurchaseController extends Controller
      */
     public function edit(Purchase $purchase)
     {
+        dd($purchase);
         $views['trx'] = $purchase;
         $views['product'] = Product::all();
         $views['supplier'] = Supplier::all();
