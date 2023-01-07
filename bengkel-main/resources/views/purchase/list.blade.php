@@ -1,7 +1,7 @@
 @extends('template.layout')
 
 @section('content')
-<form id="generatePO" action="{{ route('PurchaseDetail.store') }}" method="POST">
+<form id="generatePO" action="{{ route('purchase.store') }}" method="POST">
     @csrf()
 </form>
     

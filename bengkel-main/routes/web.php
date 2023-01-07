@@ -60,13 +60,10 @@ Route::get('/cetak', [TransactionController::class, 'cetak']);
 Route::resource('/transactionDetail', TransactionDetailController::class);
 Route::resource('/cetakTransaction', CetakTransactionController::class);
 
-<<<<<<< HEAD
+
 Route::resource('/purchase',PurchaseController::class)->parameters([
     'purchase' => 'purchase:invoice'
 ]);
 Route::resource('/PurchaseDetail', PurchaseDetailController::class);
-=======
-Route::resource('/purchase',PurchaseController::class);
     
 Route::resource('/reportTransaction', ReportTransactionController::class);
->>>>>>> bcff5546eae35ea9a0c80511deb31439694b55cb
