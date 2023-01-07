@@ -37,9 +37,9 @@
                         @if(isset($product))
                         @foreach ($product as $item)
                             @if (old('product') == $item->id)
-                                <option value="{{ $item->id }}" selected>{{ $item->productName }}</option>
+                                <option value="{{ $item->id }}" selected>{{ $item->product_name }}</option>
                             @else
-                                <option value="{{ $item->id }}">{{ $item->productName }}</option>
+                                <option value="{{ $item->id }}">{{ $item->product_name }}</option>
                             @endif
                         @endforeach
                         @endif
@@ -98,7 +98,7 @@
                         <tr>
                             <td>{{ $item->created_at }}</td>
                             <td>{{ $item->invoice }}</td>
-                            <td>{{ $item->product->productName }}</td>
+                            <td>{{ $item->product->product_name }}</td>
                             <td>{{ $item->qty }}</td>
                             <td>{{ $item->price }}</td>
                             <td>{{ $item->subtotal }}</td>

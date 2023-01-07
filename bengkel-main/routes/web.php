@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\PurchaseDetailController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ReportPurchaseController;
 use App\Http\Controllers\ReportTransactionController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\TransactionController;
@@ -67,3 +68,4 @@ Route::resource('/purchase',PurchaseController::class)->parameters([
 Route::resource('/PurchaseDetail', PurchaseDetailController::class);
     
 Route::resource('/reportTransaction', ReportTransactionController::class);
+Route::resource('/reportPurchase', ReportPurchaseController::class);

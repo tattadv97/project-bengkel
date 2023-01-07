@@ -10,7 +10,7 @@
             <h6 class="m-0 font-weight-bold text-primary">Pilih Periode</h6>
         </div>
         <div class="card-body">
-            <form class="row gx-3 gy-2 align-items-center" action="{{ route('report.store') }}" method="POST">
+            <form class="row gx-3 gy-2 align-items-center" action="{{ route('reportPurchase.store') }}" method="POST">
                 @csrf
                 <div class="col-sm-3 mb-3">
                     <label for="tglAwal" class="form-label">Mulai Dari</label>
@@ -53,7 +53,6 @@
                             <th>No PO</th>
                             <th>Supplier</th>
                             <th>Total Price</th>
-                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -62,9 +61,8 @@
                         <tr>
                             <td>{{ $item->created_at }}</td>
                             <td>{{ $item->invoice }}</td>
-                            <td>{{ $item->supplier->companyName }}</td>
+                            <td>{{ $item->supplier->company_name }}</td>
                             <td>{{ $item->totalPrice }}</td>
-                            <td></td>
                         </tr>
                         @endforeach
                         @endif
