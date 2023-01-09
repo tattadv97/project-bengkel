@@ -20,6 +20,7 @@
                         <tr>
                             <th>Name</th>
                             <th>Username</th>
+                            <th>Password</th>
                             <th>Role</th>
                             <th>Action</th>
                         </tr>
@@ -29,6 +30,7 @@
                             <tr>
                                 <td>{{ $item -> name }}</td>
                                 <td>{{ $item -> username }}</td>
+                                <td>{{ $item -> password }}</td>
                                 <td>{{ $item -> role }}</td>
                                 <td>
                                     <a href="/user_access/{{ $item->id }}/edit" class="btn btn-warning">Edit</a>

@@ -43,6 +43,7 @@ class UserController extends Controller
             'name' => 'required',
             'username' => 'required',
             'password' => 'required',
+            'role' => 'required',
         ]);
 
         User::create($validatedData);
@@ -68,6 +69,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
+        dd($user);
         return view('login.edit-login', [
             'user' => $user
         ]);
@@ -86,6 +88,7 @@ class UserController extends Controller
             'name' => 'required',
             'username' => 'required',
             'password' => 'required',
+            'role' => 'required',
         ];
         
         $validatedData = $request -> validate($rules);

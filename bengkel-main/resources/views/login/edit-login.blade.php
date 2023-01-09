@@ -50,6 +50,18 @@
                         @enderror
                     </div>
 
+                    <div class="mb-3">
+                        <label for="role" class="form-label">Role</label>
+                        <input type="text" class="@error('role') is-invalid @enderror form-control"
+                            id="role" name="role" value="{{ old('role', $user->role) }}">
+
+                        @error('role')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+
                     <button type="submit" class="btn btn-primary">Edit User</button>
                     <a href="/user_access" class="btn btn-danger ">Cancel</a>
                 </form>

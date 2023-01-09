@@ -3,9 +3,11 @@
 namespace Database\Seeders;
 
 use App\Models\Customer;
+use App\Models\Mechanic;
 use App\Models\Product;
 use App\Models\Sparepart;
 use App\Models\Supplier;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -82,6 +84,24 @@ class DatabaseSeeder extends Seeder
             'plat_nomor' => 'f15662oo',
             'jenis_kendaraan' => 'hohnda',
             'kontak' => '02883873'
+        ]);
+
+        Mechanic::create([
+            'nama' => '-',
+            'jabatan' => '-'
+        ]);
+
+        User::create([
+            'name' => 'Admin',
+            'username' => 'admin',
+            'password' => bcrypt('admin'),
+            'role' => 'Admin',
+        ]);
+        User::create([
+            'name' => 'User',
+            'username' => 'user',
+            'password' => bcrypt('user'),
+            'role' => 'User',
         ]);
     }
 }

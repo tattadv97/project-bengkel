@@ -74,4 +74,4 @@ Route::resource('/reportTransaction', ReportTransactionController::class);
 Route::resource('/reportPurchase', ReportPurchaseController::class);
 
 //Register
-Route::get('/register', [RegisterController::class, 'index']);
+Route::resource('/register', RegisterController::class);
