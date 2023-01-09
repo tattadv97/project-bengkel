@@ -12,6 +12,8 @@ use App\Http\Controllers\ReportTransactionController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\TransactionDetailController;
+use App\Http\Controllers\UserAccessController;
+use App\Http\Controllers\UserController;
 use App\Imports\ProductImport;
 use Illuminate\Support\Facades\Route;
 
@@ -51,6 +53,7 @@ Route::resource('/supplier', SupplierController::class);
 Route::resource('/product', ProductController::class);
 Route::resource('/mechanic', MechanicController::class);
 Route::resource('/customer', CustomerController::class);
+Route::resource('/user_access', UserController::class);
 
 Route::resource('/transaction', TransactionController::class)->parameters([
     'transaction' => 'transaction:invoice'
@@ -69,3 +72,6 @@ Route::resource('/PurchaseDetail', PurchaseDetailController::class);
     
 Route::resource('/reportTransaction', ReportTransactionController::class);
 Route::resource('/reportPurchase', ReportPurchaseController::class);
+
+//Register
+Route::get('/register', [RegisterController::class, 'index']);

@@ -121,7 +121,7 @@
                     </div>
 
                     <button type="submit" class="btn btn-primary">Edit Product</button>
-                    <a href="/sparepart" class="btn btn-danger ">Cancel</a>
+                    <a href="/product" class="btn btn-danger ">Cancel</a>
                 </form>
             </div>
         </div>
