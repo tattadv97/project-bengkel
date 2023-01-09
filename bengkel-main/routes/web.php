@@ -49,29 +49,28 @@ Route::post('/', function(){
 
 //Export
 
+
+//Master Data
 Route::resource('/supplier', SupplierController::class);
 Route::resource('/product', ProductController::class);
 Route::resource('/mechanic', MechanicController::class);
 Route::resource('/customer', CustomerController::class);
-Route::resource('/user_access', UserController::class);
+Route::resource('/register', RegisterController::class);
 
+//Utiities
 Route::resource('/transaction', TransactionController::class)->parameters([
     'transaction' => 'transaction:invoice'
 ]);
-
 Route::get('/cetak', [TransactionController::class, 'cetak']);
-
 Route::resource('/transactionDetail', TransactionDetailController::class);
 Route::resource('/cetakTransaction', CetakTransactionController::class);
-
 
 Route::resource('/purchase',PurchaseController::class)->parameters([
     'purchase' => 'purchase:invoice'
 ]);
 Route::resource('/PurchaseDetail', PurchaseDetailController::class);
-    
+
+//Reports
 Route::resource('/reportTransaction', ReportTransactionController::class);
 Route::resource('/reportPurchase', ReportPurchaseController::class);
 
-//Register
-Route::resource('/register', RegisterController::class);
