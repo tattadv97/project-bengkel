@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CetakTransactionController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MechanicController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PurchaseController;
@@ -74,3 +75,6 @@ Route::resource('/PurchaseDetail', PurchaseDetailController::class);
 Route::resource('/reportTransaction', ReportTransactionController::class);
 Route::resource('/reportPurchase', ReportPurchaseController::class);
 
+//Login
+Route::get('/login', [LoginController::class, 'index']);
+Route::post('/login', [LoginController::class, 'authenticate']);
