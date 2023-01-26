@@ -50,7 +50,7 @@
                     </div>
 
                     <button type="submit" class="btn btn-primary">Add Supplier</button>
-                    <a href="/supplier" class="btn btn-danger ">Cancle</a>
+                    <a href="/supplier" class="btn btn-danger ">Cancel</a>
                 </form>
             </div>
         </div>

@@ -52,30 +52,30 @@ Route::post('/', function(){
 
 
 //Master Data
-Route::resource('/supplier', SupplierController::class);
-Route::resource('/product', ProductController::class);
-Route::resource('/mechanic', MechanicController::class);
-Route::resource('/customer', CustomerController::class);
-Route::resource('/register', RegisterController::class);
+Route::resource('/supplier', SupplierController::class)->middleware('auth');
+Route::resource('/product', ProductController::class)->middleware('auth');
+Route::resource('/mechanic', MechanicController::class)->middleware('auth');
+Route::resource('/customer', CustomerController::class)->middleware('auth');
+Route::resource('/register', RegisterController::class)->middleware('auth');
 
 //Utiities
 Route::resource('/transaction', TransactionController::class)->parameters([
     'transaction' => 'transaction:invoice'
-]);
-Route::get('/cetak', [TransactionController::class, 'cetak']);
-Route::resource('/transactionDetail', TransactionDetailController::class);
-Route::resource('/cetakTransaction', CetakTransactionController::class);
+])->middleware('auth');
+Route::get('/cetak', [TransactionController::class, 'cetak'])->middleware('auth');
+Route::resource('/transactionDetail', TransactionDetailController::class)->middleware('auth');
+Route::resource('/cetakTransaction', CetakTransactionController::class)->middleware('auth');
 
 Route::resource('/purchase',PurchaseController::class)->parameters([
     'purchase' => 'purchase:invoice'
-]);
-Route::resource('/PurchaseDetail', PurchaseDetailController::class);
+])->middleware('auth');
+Route::resource('/PurchaseDetail', PurchaseDetailController::class)->middleware('auth');
 
 //Reports
-Route::resource('/reportTransaction', ReportTransactionController::class);
-Route::resource('/reportPurchase', ReportPurchaseController::class);
+Route::resource('/reportTransaction', ReportTransactionController::class)->middleware('auth');
+Route::resource('/reportPurchase', ReportPurchaseController::class)->middleware('auth');
 
 //Login
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('login', [LoginController::class, 'authenticate']);
-Route::post('logout', [LoginController::class, 'logout']);
+Route::post('/logout', [LoginController::class, 'logout']);

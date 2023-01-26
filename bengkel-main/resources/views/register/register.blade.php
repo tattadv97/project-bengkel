@@ -25,14 +25,14 @@
                     </thead>
                     <tbody>
                         <tr>
-                            @foreach ($user as $item)
-                            <td>{{ $item->name }}</td>
-                            <td>{{ $item->username }}</td>
-                            <td>{{ $item->password }}</td>
-                            <td>{{ $item->role }}</td>
-                            <td>
-                                    <button class="btn btn-danger" onclick="return confirm('Are You Sure??')">Delete</button>
-                            </td>
+                        @foreach ($user as $item)
+                                <td>{{ $item->name }}</td>
+                                <td>{{ $item->username }}</td>
+                                <td>{{ $item->password }}</td>
+                                <td>{{ $item->role }}</td>
+                                <td>
+                                        <button class="btn btn-danger" onclick="return confirm('Are You Sure??')">Delete</button>
+                                </td>
                         </tr>
                         @endforeach
                     </tbody>
