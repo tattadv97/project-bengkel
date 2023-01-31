@@ -71,6 +71,7 @@ class TransactionController extends Controller
     public function show(Transaction $transaction)
     {
         $views['trx'] = $transaction;
+
         $views['mechanic'] = Mechanic::find($transaction->mechanic_id);
         $views['product'] = product::all();
         $views['trxDetail'] = TransactionDetail::with('product')->where('invoice', $transaction->invoice)->get();

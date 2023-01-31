@@ -40,9 +40,9 @@
     		<div class="row">
     			<div class="col-xs-6">
     				<address>
-    					<strong>{{ $customer->customerName }}</strong><br>
-    					{{ $customer->address }}<br>
-    					{{ $customer->msisdn }}
+    					<strong>{{ $trx['customer'] }}</strong><br>
+    					{{ $trx['no_plat'] }}<br>
+    					{{ $trx['kendaraan'] }}
     				</address>
     			</div>
     			<div class="col-xs-6 text-right">
@@ -50,7 +50,11 @@
     					<strong>Order Date:</strong><br>
     					{{ $trx['created_at'] }}<br><br>
     					<strong>Customer : </strong>
-    					{{ $customer->nama }}<br><br>
+    					{{ $trx->customer }}<br><br>
+    					<strong>Plat Number : </strong>
+    					{{ $trx->no_plat }}<br><br>
+    					<strong>Kendaraan : </strong>
+    					{{ $trx->kendaraan }}<br><br>
     					<strong>Mechanic : </strong>
     					{{ $mechanic->nama }}<br><br>
     				</address>
@@ -94,7 +98,7 @@
     							<tr>
     								<td class="no-line"></td>
     								<td class="no-line"></td>
-    								<td class="no-line text-center"><strong>Shipping</strong></td>
+    								<td class="no-line text-center"><strong>Diskon</strong></td>
     								<td class="no-line text-right">Rp. 0</td>
     							</tr>
     							<tr>

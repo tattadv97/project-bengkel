@@ -39,7 +39,7 @@
                 <a class="collapse-item" href="/product">Product</a>
                 <a class="collapse-item" href="/supplier">Supplier</a>
                 <a class="collapse-item" href="/mechanic">Mechanic</a>
-                <a class="collapse-item" href="/customer">Customer</a>
+                
                 <a class="collapse-item" href="/register">User Access</a>
             </div>
         </div>

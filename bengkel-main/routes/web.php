@@ -55,7 +55,7 @@ Route::post('/', function(){
 Route::resource('/supplier', SupplierController::class)->middleware('auth');
 Route::resource('/product', ProductController::class)->middleware('auth');
 Route::resource('/mechanic', MechanicController::class)->middleware('auth');
-Route::resource('/customer', CustomerController::class)->middleware('auth');
+
 Route::resource('/register', RegisterController::class)->middleware('auth');
 
 //Utiities
