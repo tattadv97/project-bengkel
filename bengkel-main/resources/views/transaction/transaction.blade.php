@@ -64,18 +64,12 @@
                     @csrf
 
                     <input type="hidden" name="nominal" value="{{ $subtotal }}">
+
                     <div class="col-sm-3">
-                        <label class="visually-hidden" for="customerId">Customer</label>
-                        <select name="customerId" class="form-control form-select" id="customerId" required>
-                            @foreach ($customer as $item)
-                                @if (old('customer') == $item->id)
-                                    <option value="{{ $item->id }}" selected>{{ $item->nama }}</option>
-                                @else
-                                    <option value="{{ $item->id }}">{{ $item->nama }}</option>
-                                @endif
-                            @endforeach
-                        </select>
+                        <label for="customer">Customer</label>
+                        <input type="text" class="form-control" id="customer" name="customer">
                     </div>
+
                     <div class="col-sm-3">
                         <label class="visually-hidden" for="mechanic_id">Mechanic</label>
                         <select name="mechanic_id" class="form-control form-select" id="mechanic_id" required>
@@ -88,6 +82,17 @@
                             @endforeach
                         </select>
                     </div>
+
+                    <div class="col-sm-3">
+                        <label for="kendaraan">Jenis Kendaraan</label>
+                        <input type="text" class="form-control" id="kendaraan" name="kendaraan">
+                    </div>
+
+                    <div class="col-sm-3">
+                        <label for="no_plat">Plat Number</label>
+                        <input type="text" class="form-control" id="no_plat" name="no_plat">
+                    </div>
+
                     <div class="col-sm-3">
                         <label for="totalPrice">Total Price</label>
                         <input type="text" class="form-control" id="totalPrice" name="totalPrice" value="{{ $subtotal }}" readonly>

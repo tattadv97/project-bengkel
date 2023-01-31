@@ -23,6 +23,8 @@
                         <tr>
                             <th>Transaction Number</th>
                             <th>Customer</th>
+                            <th>Kendaraan</th>
+                            <th>Plat Number</th>
                             <th>Mechanic</th>
                             <th>Total Price</th>
                             <th>Action</th>
@@ -33,7 +35,9 @@
                         @foreach ($transaction as $item)
                             <tr>
                                 <td>{{ $item->invoice }}</td>
-                                <td>{{ $item->customer->nama }}</td>
+                                <td>{{ $item -> customer }}</td>
+                                <td>{{ $item -> kendaraan }}</td>
+                                <td>{{ $item -> no_plat }}</td>
                                 <td>{{ $item->mechanic->nama }}</td>
                                 <td>Rp. {{ $item->totalPrice }}</td>
                                 <td>

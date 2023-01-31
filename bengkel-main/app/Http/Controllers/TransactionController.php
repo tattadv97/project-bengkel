@@ -33,7 +33,6 @@ class TransactionController extends Controller
     {
         return view('transaction.list', [
             'transaction' => Transaction::all(),
-            'customer' => Customer::all(),
             'mechanic' => Mechanic::all()
         ]);
     }
@@ -72,7 +71,7 @@ class TransactionController extends Controller
     public function show(Transaction $transaction)
     {
         $views['trx'] = $transaction;
-        $views['customer'] = customer::find($transaction->customerId);
+        
         $views['mechanic'] = Mechanic::find($transaction->mechanic_id);
         $views['product'] = product::all();
         $views['trxDetail'] = TransactionDetail::with('product')->where('invoice', $transaction->invoice)->get();
@@ -89,7 +88,6 @@ class TransactionController extends Controller
     {
         $views['trx'] = $transaction;
         $views['mechanic'] = Mechanic::all();
-        $views['customer'] = Customer::all();
         $views['product'] = Product::all();
         $views['trxDetail'] = TransactionDetail::with('product')->where('invoice', $transaction->invoice)->get();
         $views['subtotal'] = TransactionDetail::where('invoice', $transaction->invoice)->sum('subtotal');
@@ -105,13 +103,17 @@ class TransactionController extends Controller
      */
     public function update(Request $request, Transaction $transaction)
     {
+        dd($transaction);
         //ambil data request
         $data = $request->validate([
-            'customerId' => 'required',
+            'customer' => 'required',
+            'kendaraan' => 'reqiured',
+            'no_plat' => 'required',
             'mechanic_id' => 'required',
             'totalPrice' => 'required',
             ]);
             //menyimpan data ke tabel transaksi
+            dd($data);
             Transaction::where('invoice', $transaction->invoice)->update($data);
             return redirect()->route('transaction.index');
     }
