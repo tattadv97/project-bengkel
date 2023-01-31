@@ -3,9 +3,9 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
         <div class="sidebar-brand-icon">
-            <i class="fas fa-home"></i>
+            <i class="fa fa-motorcycle" aria-hidden="true"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+        <div class="sidebar-brand-text mx-3">BENGKEL <sup>SABIT</sup></div>
     </a>
 
     <!-- Divider -->
