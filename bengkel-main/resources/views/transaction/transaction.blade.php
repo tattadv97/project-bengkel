@@ -68,6 +68,7 @@
                     <div class="col-sm-3">
                         <label for="customer">Customer</label>
                         <input type="text" class="form-control" id="customer" name="customer">
+                        
                     </div>
 
                     <div class="col-sm-3">

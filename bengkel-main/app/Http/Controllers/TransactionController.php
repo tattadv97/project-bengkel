@@ -71,7 +71,6 @@ class TransactionController extends Controller
     public function show(Transaction $transaction)
     {
         $views['trx'] = $transaction;
-        
         $views['mechanic'] = Mechanic::find($transaction->mechanic_id);
         $views['product'] = product::all();
         $views['trxDetail'] = TransactionDetail::with('product')->where('invoice', $transaction->invoice)->get();
@@ -103,17 +102,15 @@ class TransactionController extends Controller
      */
     public function update(Request $request, Transaction $transaction)
     {
-        dd($transaction);
         //ambil data request
         $data = $request->validate([
             'customer' => 'required',
-            'kendaraan' => 'reqiured',
+            'kendaraan' => 'required',
             'no_plat' => 'required',
             'mechanic_id' => 'required',
             'totalPrice' => 'required',
             ]);
             //menyimpan data ke tabel transaksi
-            dd($data);
             Transaction::where('invoice', $transaction->invoice)->update($data);
             return redirect()->route('transaction.index');
     }

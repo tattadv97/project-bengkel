@@ -11,7 +11,6 @@ class Transaction extends Model
 
     protected $guarded = ['id'];
 
-
     public function transactionDetail()
     {
         return $this->belongsTo(TransactionDetail::class, 'invoice');
