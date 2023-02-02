@@ -95,12 +95,7 @@
     								<td class="thick-line text-center"><strong>Subtotal</strong></td>
     								<td class="thick-line text-right">Rp. {{ $trx->totalPrice }}</td>
     							</tr>
-    							<tr>
-    								<td class="no-line"></td>
-    								<td class="no-line"></td>
-    								<td class="no-line text-center"><strong>Diskon</strong></td>
-    								<td class="no-line text-right">Rp. 0</td>
-    							</tr>
+    							
     							<tr>
     								<td class="no-line"></td>
     								<td class="no-line"></td>
