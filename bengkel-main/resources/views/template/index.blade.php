@@ -2,49 +2,57 @@
 
 @section('content')
 
-<div class="container-fluid">
+<p align="center"><img src="home.png" width="1000"></p>
 
-    <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Charts</h1>
-    <p class="mb-4">Chart.js is a third party plugin that is used to generate the charts in this theme.
-        The charts below have been customized - for further customization options, please visit the official Chart.js documentation.</p>
+<marquee>Selamat Datang di Sistem Informasi Bengkel Sabit</marquee>
 
-    <!-- Content Row -->
-    <div class="row">
+    <div class="container-fluid">
+	    <div class="block-header">
+	        
+	    </div>
 
-        <div class="col-xl-8 col-lg-7">
-
-            <!-- Area Chart -->
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Area Chart</h6>
-                </div>
-                <div class="card-body">
-                    <div class="chart-area">
-                        <canvas id="myAreaChart"></canvas>
+	    <!-- Widgets -->
+            
+            <div class="row clearfix">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box bg-blue hover-expand-effect">
+                        <div class="icon">
+                        <a href="transaction"><p align="center"><img src="transaction.png" width="70" height="70" style="float:center;margin:0;" /></a>
+                        </div>
+                        <div class="content">
+                            <div class="text"><p align="center">Data Transaction</div>
+                            <div class="number count-to" data-from="0" data-to="125" data-speed="15" data-fresh-interval="20"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-        </div>
-
-        <!-- Donut Chart -->
-        <div class="col-xl-4 col-lg-5">
-            <div class="card shadow mb-4">
-                <!-- Card Header - Dropdown -->
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Donut Chart</h6>
-                </div>
-                <!-- Card Body -->
-                <div class="card-body">
-                    <div class="chart-pie pt-4">
-                        <canvas id="myPieChart"></canvas>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box bg-blue hover-expand-effect">
+                        <div class="icon">
+                        <a href="purchase"><p align="center"><img src="purchase.png" width="70" height="70" style="float:center;margin:0;" /></a>
+                        </div>
+                        <div class="content">
+                            <div class="text"><p align="center">Data Purchase</div>
+                            <div class="number count-to" data-from="0" data-to="125" data-speed="15" data-fresh-interval="20">
+                                
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box bg-blue hover-expand-effect">
+                        <div class="icon">
+                        <a href="mechanic"><p align="center"><img src="mechanic.jpg" width="70" height="70" style="float:center;margin:0;" /></a>
+                        </div>
+                        <div class="content">
+                            <div class="text"><p align="center">Data Mekanik</div>
+                            <div class="number count-to" data-from="0" data-to="125" data-speed="15" data-fresh-interval="20"></div>
+                        </div>
+                    </div>
+                </div>
+	    </div>
     </div>
 
-</div>
 
 @endsection

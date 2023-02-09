@@ -24,7 +24,7 @@
                             <th>Invoice Number</th>
                             <th>Supplier</th>
                             <th>Total Price</th>
-                            <th>Action</th>
+                           
                         </tr>
                     </thead>
                     <tbody>
@@ -33,9 +33,13 @@
                                 <td>{{ $item->invoice }}</td>
                                 <td>{{ $item->supplier->company_name }}</td>
                                 <td>Rp. {{ $item->totalPrice }}</td>
+                                
+                                {{---
                                 <td>
                                     <a href="{{ route('purchase.show', ['purchase' => $item->invoice]) }}" class="btn btn-success fa fa-copy" target="_blank"></a>
                                 </td>
+                                --}}
+                                
                             </tr>
                         @endforeach
                     </tbody>

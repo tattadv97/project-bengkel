@@ -94,7 +94,7 @@
                                 <th>Price</th>
                                 <th>Qty</th>
                                 <th>Sub Total</th>
-                                <th>Action</th>
+                                
                             </tr>
                         </thead>
                         <tbody>
@@ -106,6 +106,8 @@
                                         <td>Rp. {{ $detail->product->selling_price }}</td>
                                         <td>{{ $detail->qty }}</td>
                                         <td>Rp. {{ $detail->subtotal }}</td>
+                                        
+                                        {{---
                                         <td>
                                             <form action="{{ route('PurchaseDetail.destroy', ['PurchaseDetail' => $detail->id]) }}" method="POST" class="d-inline">
                                                 @method('DELETE')
@@ -114,6 +116,8 @@
                                                     onclick="return confirm('Are You Sure??')" type="submit">Cancel</button>
                                             </form>
                                         </td>
+                                        --}}
+                                        
                                     </tr>
                                 @endforeach
                         
