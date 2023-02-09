@@ -2,6 +2,8 @@
 
 @section('content')
 
+<h1 class="h3 mb-2 text-gray-800">Dashboard</h1>
+
 <p align="center"><img src="home.png" width="1000"></p>
 
 <marquee>Selamat Datang di Sistem Informasi Bengkel Sabit</marquee>

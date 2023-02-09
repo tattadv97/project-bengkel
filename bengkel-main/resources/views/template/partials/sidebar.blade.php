@@ -2,10 +2,12 @@
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+        {{---
         <div class="sidebar-brand-icon">
             <i class="fa fa-motorcycle" aria-hidden="true"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">BENGKEL <sup>SABIT</sup></div>
+        --}}
+        <div class="sidebar-brand-text mx-3">BENGKEL SABIT</div>
     </a>
 
     <!-- Divider -->
