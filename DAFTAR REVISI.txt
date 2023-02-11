@@ -1,0 +1,31 @@
+Revisi skripsi
+
+Ucapan terima kasih
+-harus ada kata bapak/ibu XXXXX
+
+Abstrak
+-mencakup 1 paragraph saja bukan 2. XXXX
+
+BAB 1
+-latar belakang XXX
+  -tidak membahas intensif jasa mekanik XXX
+  - dari latar belakang masalah kenapa penulis harus membuat aplikasi ini? XXXX
+
+- Identifikasi masalah
+Ada oenjelasan oencatatn pembukuan secara manual nanti di kasih bukti nya RIAN
+
+- BAB 2
+  - Literatur harus di jabarin secara detail XXX??
+  - pengertian sistem harus beserta sumber nya (semua penjelasan pengertian) 
+  - penulisan literatur terlalu ke kanan XXX (dan ada beberapa di bab lain juga yang penulisanya terlalu ke kanan) 
+
+- BAB 3
+  -Penulisan keterangan gambar harus lengkap
+  -gambar metode waterfall ga jelas dan salah pola gambar nya ( cntoh yg benar seperti gambar metodologi penelitian) 
+  -sequance diagram harus jelas dan clas diagram juga harus jelas
+
+BAB 5
+Dari kesimpulan menjawab dari uraian batasan masalah XXX
+
+codingan
+Ga perlu di lampirkan
