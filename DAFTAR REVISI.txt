@@ -16,7 +16,7 @@ Ada oenjelasan oencatatn pembukuan secara manual nanti di kasih bukti nya RIAN
 
 - BAB 2
   - Literatur harus di jabarin secara detail XXX??
-  - pengertian sistem harus beserta sumber nya (semua penjelasan pengertian) 
+  - pengertian sistem harus beserta sumber nya (semua penjelasan pengertian) XXX
   - penulisan literatur terlalu ke kanan XXX (dan ada beberapa di bab lain juga yang penulisanya terlalu ke kanan) 
 
 - BAB 3
