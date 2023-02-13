@@ -17,12 +17,12 @@ Ada oenjelasan oencatatn pembukuan secara manual nanti di kasih bukti nya RIAN
 - BAB 2
   - Literatur harus di jabarin secara detail XXX??
   - pengertian sistem harus beserta sumber nya (semua penjelasan pengertian) XXX
-  - penulisan literatur terlalu ke kanan XXX (dan ada beberapa di bab lain juga yang penulisanya terlalu ke kanan) 
+  - penulisan literatur terlalu ke kanan XXX (dan ada beberapa di bab lain juga yang penulisanya terlalu ke kanan) XXX
 
 - BAB 3
-  -Penulisan keterangan gambar harus lengkap
-  -gambar metode waterfall ga jelas dan salah pola gambar nya ( cntoh yg benar seperti gambar metodologi penelitian) 
-  -sequance diagram harus jelas dan clas diagram juga harus jelas
+  -Penulisan keterangan gambar harus lengkap XXX
+  -gambar metode waterfall ga jelas dan salah pola gambar nya ( cntoh yg benar seperti gambar metodologi penelitian) XXX
+  -sequance diagram harus jelas XXX dan clas diagram juga harus jelas XXX
 
 BAB 5
 Dari kesimpulan menjawab dari uraian batasan masalah XXX
